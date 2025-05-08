@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Woody's Mushrooms</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Woody's Mushrooms</h1>
+        <p class="tagline">Groovy Fungi & Fresh Vibes</p>
+    </header>
+
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Products</a>
+        <a href="#">Markets</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <main>
+        <section class="intro">
+            <h2>Welcome to the Mushroom Zone</h2>
+            <p>Hand-harvested mushrooms, dried and fresh, served with heart and a little funk.</p>
+        </section>
+
+        <section class="products">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product-card">
+                    <h3>Lion's Mane Powder</h3>
+                    <p>$30 per jar</p>
+                </div>
+                <div class="product-card">
+                    <h3>Dried Oyster Mushrooms</h3>
+                    <p>$10 or 3 for $25</p>
+                </div>
+                <div class="product-card">
+                    <h3>Powder Snacks</h3>
+                    <p>$10</p>
+                </div>
+                <div class="product-card">
+                    <h3>Fresh Mushrooms</h3>
+                    <p>Sm $10 | Lg $15 or 2 for $25</p>
+                </div>
+            </div>
+        
+            <section class="order-form">
+                <h2>Place an Order</h2>
+                <form id="demoOrderForm">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+            
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+            
+                    <h3>Select Products:</h3>
+            
+                    <label for="lionManeQty">Lion's Mane Powder ($30)</label>
+                    <input type="number" id="lionManeQty" name="lionManeQty" min="0" value="0" data-price="30">
+            
+                    <label for="driedQty">Dried Oyster Mushrooms ($10)</label>
+                    <input type="number" id="driedQty" name="driedQty" min="0" value="0" data-price="10">
+            
+                    <label for="snacksQty">Powder Snacks ($10)</label>
+                    <input type="number" id="snacksQty" name="snacksQty" min="0" value="0" data-price="10">
+            
+                    <label for="freshQty">Fresh Mushrooms - Large ($15)</label>
+                    <input type="number" id="freshQty" name="freshQty" min="0" value="0" data-price="15">
+            
+                    <p><strong>Total: $<span id="orderTotal">0</span></strong></p>
+            
+                    <label for="message">Anything else?</label>
+                    <textarea id="message" name="message" rows="3"></textarea>
+            
+                    <button type="submit">Send Order</button>
+                </form>
+            
+                <div id="confirmation" style="display:none;">
+                    <h3>Thank you for your order!</h3>
+                    <p>We'll review it soon. (Demo mode — no email sent.)</p>
+                </div>
+            </section>
+            
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Woody's Mushrooms | Peace, Love, and Fungi</p>
+    </footer>
+    <script>
+        const form = document.getElementById('demoOrderForm');
+        const confirmation = document.getElementById('confirmation');
+        const totalDisplay = document.getElementById('orderTotal');
+    
+        // Update total in real time
+        const inputs = form.querySelectorAll('input[type="number"]');
+        inputs.forEach(input => {
+            input.addEventListener('input', updateTotal);
+        });
+    
+        function updateTotal() {
+            let total = 0;
+            inputs.forEach(input => {
+                const qty = parseInt(input.value) || 0;
+                const price = parseFloat(input.dataset.price);
+                total += qty * price;
+            });
+            totalDisplay.textContent = total.toFixed(2);
+        }
+    
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+            form.style.display = 'none';
+            confirmation.style.display = 'block';
+            console.log("Order summary:");
+            inputs.forEach(input => {
+                const qty = parseInt(input.value) || 0;
+                if (qty > 0) {
+                    console.log(`${input.previousElementSibling.textContent}: ${qty}`);
+                }
+            });
+            console.log(`Total: $${totalDisplay.textContent}`);
+        });
+    </script>
+    <h3>Website Designed By James Industries - james-industries-llc.com</h3>
+    
+</body>
+</html>

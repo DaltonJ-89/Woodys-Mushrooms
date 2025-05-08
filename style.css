@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Rye&family=Kalam&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Kalam', cursive;
+    background: linear-gradient(to bottom right, #fef6e4, #e8e2d0);
+    color: #3c2f2f;
+}
+
+/* Header */
+header {
+    background: radial-gradient(circle at center, #800080, #4b004b);
+    color: #fff;
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 4px dashed #a25ea3;
+}
+
+header h1 {
+    font-family: 'Rye', cursive;
+    font-size: 3em;
+    margin: 0;
+    letter-spacing: 2px;
+}
+
+.tagline {
+    font-size: 1.3em;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+/* Navigation */
+nav {
+    background-color: #5C1A82;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 12px 0;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 20px;
+    font-size: 1.1em;
+    position: relative;
+}
+
+nav a::after {
+    content: '';
+    display: block;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+    transition: width 0.3s;
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* Main Content */
+main {
+    padding: 40px 20px;
+}
+
+/* Intro Section */
+.intro {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.intro h2 {
+    font-size: 2em;
+    color: #5C1A82;
+}
+
+.intro p {
+    font-size: 1.2em;
+}
+
+/* Products Section */
+.products {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.product-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 25px;
+}
+
+.product-card {
+    background-color: #fff7fc;
+    border: 2px solid #a25ea3;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 18px rgba(0,0,0,0.2);
+}
+
+.product-card h3 {
+    color: #800080;
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+/* Footer */
+footer {
+    background-color: #4b004b;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    margin-top: 50px;
+    font-family: 'Kalam', cursive;
+    letter-spacing: 1px;
+}
+.order-form {
+    max-width: 700px;
+    margin: 60px auto;
+    padding: 25px;
+    background: #fff0f9;
+    border: 2px dashed #a25ea3;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.order-form h2 {
+    text-align: center;
+    color: #800080;
+}
+
+.order-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.order-form label {
+    margin-top: 10px;
+    font-weight: bold;
+    font-family: 'Kalam', cursive;
+}
+
+.order-form input,
+.order-form textarea {
+    padding: 10px;
+    border: 2px solid #a25ea3;
+    border-radius: 8px;
+    font-size: 1em;
+    background: #fff;
+    font-family: 'Kalam', cursive;
+}
+
+.order-form button {
+    margin-top: 20px;
+    padding: 12px;
+    background-color: #5C1A82;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.order-form button:hover {
+    background-color: #800080;
+}
+
+#confirmation {
+    text-align: center;
+    padding: 20px;
+    font-family: 'Kalam', cursive;
+    color: #4b004b;
+}
+.order-form h3 {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #5C1A82;
+}
